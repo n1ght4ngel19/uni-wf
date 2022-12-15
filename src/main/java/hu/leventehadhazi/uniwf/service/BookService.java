@@ -38,9 +38,16 @@ public class BookService {
         return "Book removed: " + id;
     }
 
+    public String deleteAllBooks() {
+        bookRepo.deleteAll();
+
+        return "Removed all books";
+    }
+
     public BookEntity updateBook(BookEntity book) {
         BookEntity existingBook = bookRepo.findById(book.getId()).orElse(null);
         existingBook.setBookTitle(book.getBookTitle());
+        existingBook.setBookAuthor(book.getBookAuthor());
         existingBook.setPublishDate(book.getPublishDate());
         existingBook.setPrice(book.getPrice());
 

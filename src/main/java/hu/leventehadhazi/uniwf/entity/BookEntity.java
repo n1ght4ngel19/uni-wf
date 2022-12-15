@@ -18,6 +18,7 @@ public class BookEntity {
     @GeneratedValue
     private int id;
     private String bookTitle;
+    private String bookAuthor;
     private int publishDate;
     private double price;
 }
